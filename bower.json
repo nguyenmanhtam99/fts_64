@@ -1,0 +1,24 @@
+{
+  "name": "fts_64",
+  "description": "",
+  "main": "",
+  "authors": [
+    "tunglinh10a2 <linhdautung@gmail.com>"
+  ],
+  "license": "MIT",
+  "homepage": "https://github.com/tunglinh10a2/fts_64",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "public/bower",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "bootstrap-sass": "^3.3.6",
+    "jquery2": "^2.0.0",
+    "jquery-ui": "jqueryui#^1.12.0",
+    "font-awesome": "fontawesome#^4.6.3"
+  }
+}

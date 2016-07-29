@@ -2,7 +2,7 @@
 
 namespace App\Http\Controllers\Auth;
 
-use App\User;
+use App\Models\User;
 use Validator;
 use App\Http\Controllers\Controller;
 use Illuminate\Foundation\Auth\ThrottlesLogins;
@@ -37,6 +37,8 @@ class AuthController extends Controller
      */
     public function __construct()
     {
+        $layout = config('common.layouts.login.default');
+        parent::__construct($layout);
         $this->middleware($this->guestMiddleware(), ['except' => 'logout']);
     }
 

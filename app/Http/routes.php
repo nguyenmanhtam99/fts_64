@@ -28,3 +28,15 @@ Route::post('register', ['as' => 'auth.register', 'uses' => 'Auth\AuthController
 Route::get('password/reset/{token?}', ['as' => 'auth.pass.reset', 'uses' => 'Auth\PasswordController@showResetForm']);
 Route::post('password/email', ['as' => 'auth.pass.email', 'uses' => 'Auth\PasswordController@sendResetLinkEmail']);
 Route::post('password/reset', ['as' => 'auth.pass.reset', 'uses' => 'Auth\PasswordController@reset']);
+
+Route::group(['middleware' => 'isroleadmin'], function () {
+    Route::group(['namespace' => 'Admin'], function () {
+        Route::resource('admin','UserController');
+    });
+});
+
+Route::group(['middleware' => 'auth'], function () {
+    Route::group(['namespace' => 'User'], function () {
+        Route::resource('users','UserController');
+    });
+});

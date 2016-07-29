@@ -14,9 +14,9 @@ var elixir = require('laravel-elixir');
 var files = {
     'jquery': './public/bower/jquery2/jquery.min.js',
     'jqueryBootstrap': './public/bower/bootstrap-sass/assets/javascripts/bootstrap.min.js',
-    'jqueryUI': './public/bower/jquery-ui/jquery-ui.min.js',
-    'jqueryUI_image': './public/bower/jquery-ui/themes/base/images/**',
-    'font_awesome': './public/bower/font-awesome/fonts/**',
+    'jqueryUi': './public/bower/jquery-ui/jquery-ui.min.js',
+    'jqueryUiImage': './public/bower/jquery-ui/themes/base/images/**',
+    'fontAwesome': './public/bower/font-awesome/fonts/**',
 }
 
 elixir(function(mix) {
@@ -24,9 +24,9 @@ elixir(function(mix) {
         .scripts([
             files.jquery,
             files.jqueryBootstrap,
-            files.jqueryUI,
+            files.jqueryUi,
             'app.js',
         ], 'public/js/app.js')
-        .copy(files.jqueryUI_image, 'public/css/images')
-        .copy(files.font_awesome, 'public/fonts');
+        .copy(files.jqueryUiImage, 'public/css/images')
+        .copy(files.fontAwesome, 'public/fonts');
 });

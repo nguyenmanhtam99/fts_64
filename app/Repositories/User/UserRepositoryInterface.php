@@ -4,5 +4,5 @@ namespace App\Repositories\User;
 
 interface UserRepositoryInterface
 {
-    public function all();
+    public function paginate($limit);
 }

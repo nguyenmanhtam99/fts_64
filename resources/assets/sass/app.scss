@@ -26,6 +26,16 @@
     }
 }
 
+#app-layout {
+  .container-fluid {
+    padding-left: 0px;
+    padding-right: 0px;
+  }
+}
+
+.form-group {
+  padding: 0 15px;
+}
 /**
  * Left menu
  */

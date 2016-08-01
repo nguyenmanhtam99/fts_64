@@ -2,12 +2,10 @@
 
 namespace App\Http\Controllers\Admin;
 
-use App\Repositories\User\UserRepositoryInterface;
 use Illuminate\Http\Request;
-
 use App\Http\Requests;
-use App\Models\User;
 use App\Http\Controllers\Controller;
+use App\Repositories\User\UserRepositoryInterface;
 
 class UserController extends Controller
 {
@@ -15,9 +13,9 @@ class UserController extends Controller
 
     public function __construct(UserRepositoryInterface $userRepository)
     {
-        $this->userRepository = $userRepository;
         $layout = config('common.layouts.login.default');
         parent::__construct($layout);
+        $this->userRepository = $userRepository;
     }
     /**
      * Display a listing of the resource.

@@ -4,7 +4,7 @@ namespace App\Repositories;
 
 use Carbon\Carbon;
 
- class BaseRepository
+class BaseRepository
 {
     /**
      * The Model instance.

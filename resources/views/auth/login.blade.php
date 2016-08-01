@@ -6,19 +6,19 @@
         <h3 class="omb_authTitle">{{ trans('auth.login') }}</h3>
         <div class="row omb_row-sm-offset-3 omb_socialButtons">
             <div class="col-xs-4 col-sm-2">
-                <a href="#" class="btn btn-lg btn-block omb_btn-facebook">
+                <a href="{{ route('social.redirect', config('social.social.facebook')) }}" class="btn btn-lg btn-block omb_btn-facebook">
                 <i class="fa fa-facebook visible-xs"></i>
                 <span class="hidden-xs">{{ trans('auth.facebook') }}</span>
                 </a>
             </div>
             <div class="col-xs-4 col-sm-2">
-                <a href="#" class="btn btn-lg btn-block omb_btn-twitter">
+                <a href="{{ route('social.redirect', config('social.social.twitter')) }}" class="btn btn-lg btn-block omb_btn-twitter">
                 <i class="fa fa-twitter visible-xs"></i>
                 <span class="hidden-xs">{{ trans('auth.twitter') }}</span>
                 </a>
             </div>
             <div class="col-xs-4 col-sm-2">
-                <a href="#" class="btn btn-lg btn-block omb_btn-google">
+                <a href="{{ route('social.redirect', config('social.social.google')) }}" class="btn btn-lg btn-block omb_btn-google">
                 <i class="fa fa-google-plus visible-xs"></i>
                 <span class="hidden-xs">{{ trans('auth.google') }}</span>
                 </a>

@@ -17,7 +17,7 @@ class Controller extends BaseController
 
     public function __construct($layout = null)
     {
-         if (is_null($layout)) {
+        if (is_null($layout)) {
             $layout = config('common.layouts.login.default');
         }
 

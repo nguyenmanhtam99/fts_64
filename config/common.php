@@ -6,4 +6,5 @@ return [
             'default' => 'layouts.app'
         ],
     ],
+    'paginate' => 3,
 ];

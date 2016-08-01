@@ -50,4 +50,22 @@ class User extends Authenticatable
     {
         return $this->hasMany(Exam::class);
     }
+
+    /**
+     * [isAdmin description]
+     * @return boolean [description]
+     */
+    public function isAdmin()
+    {
+        return $this->role == config('user.roles.admin');
+    }
+
+    /**
+     * [isUser description]
+     * @return boolean [description]
+     */
+    public function isUser()
+    {
+        return $this->role == config('user.roles.user');
+    }
 }

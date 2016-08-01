@@ -14,6 +14,7 @@ class Social extends Model
 
     protected $dates = ['deleted_at'];
 
+    protected $fillable = ['user_id', 'type_social', 'social_user_id'];
     /**
      * Relationships
      */

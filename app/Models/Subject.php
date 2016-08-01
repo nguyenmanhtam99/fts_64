@@ -7,6 +7,8 @@ use Illuminate\Database\Eloquent\SoftDeletes;
 
 class Subject extends Model
 {
+
+    protected $fillable = ['name'];
     /**
      * SoftDelete
      */

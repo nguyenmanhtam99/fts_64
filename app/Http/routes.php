@@ -39,8 +39,9 @@ Route::post('password/reset', ['as' => 'auth.pass.reset', 'uses' => 'Auth\Passwo
 Route::group(['middleware' => 'isroleadmin'], function () {
     Route::group(['namespace' => 'Admin'], function () {
         Route::resource('admin','UserController');
+        Route::resource('subjects','SubjectController');
     });
-});
+}); 
 
 Route::group(['middleware' => 'auth'], function () {
     Route::group(['namespace' => 'User'], function () {

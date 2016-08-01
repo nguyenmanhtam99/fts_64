@@ -3,6 +3,7 @@
 namespace App\Repositories;
 
 use Carbon\Carbon;
+use DB;
 
 class BaseRepository
 {
@@ -32,7 +33,10 @@ class BaseRepository
      */
     public function destroy($id)
     {
-        return $this->model->destroy((int)$id);
+        DB::beginTransaction();
+        $data = $this->model->destroy($id);
+        DB::commit();
+        return $data;
     }
 
     /**
@@ -94,8 +98,7 @@ class BaseRepository
      */
     public function update($attributes, $id)
     {
-        $id_column = $this->model->getKeyName();
-        return $this->model->where($id_column, $id)->update($attributes);
+        return $this->model->where('id', $id)->update($attributes);
     }
 
     /**

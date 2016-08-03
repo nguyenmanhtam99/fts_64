@@ -37,13 +37,14 @@ Route::post('password/email', ['as' => 'auth.pass.email', 'uses' => 'Auth\Passwo
 Route::post('password/reset', ['as' => 'auth.pass.reset', 'uses' => 'Auth\PasswordController@reset']);
 
 Route::group(['middleware' => 'isroleadmin'], function () {
-    Route::group(['namespace' => 'Admin'], function () {
+    Route::group(['prefix' => 'admin', 'namespace' => 'Admin'], function () {
         Route::resource('admin','UserController');
         Route::resource('subjects','SubjectController');
+        Route::resource('questions','QuestionController');
     });
 }); 
 
-Route::group(['middleware' => 'auth'], function () {
+Route::group(['prefix' => 'user', 'middleware' => 'auth'], function () {
     Route::group(['namespace' => 'User'], function () {
         Route::resource('users','UserController');
     });

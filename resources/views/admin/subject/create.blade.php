@@ -33,7 +33,7 @@
                                     @include('layouts.partials.success')
                                 </div>
 
-                                {!! Form::open(['method' => 'POST', 'route' => 'subjects.store', 'class' => 'form-horizontal']) !!}
+                                {!! Form::open(['method' => 'POST', 'route' => 'admin.subjects.store', 'class' => 'form-horizontal']) !!}
                                 <div class="form-group">
                                 {!! Form::label('name', trans('subject.subject_name'), ['class' => 'control-label']) !!}
                                 {!! Form::text('name', null, ['class' => 'form-control', 'autofocus']) !!}

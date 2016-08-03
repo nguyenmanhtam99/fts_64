@@ -7,6 +7,7 @@ use Illuminate\Database\Eloquent\SoftDeletes;
 
 class Option extends Model
 {
+    protected $fillable = ['content', 'is_correct'];
     /**
      * SoftDelete
      */

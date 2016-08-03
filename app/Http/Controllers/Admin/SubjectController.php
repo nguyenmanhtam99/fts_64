@@ -50,7 +50,7 @@ class SubjectController extends Controller
         $requestAll = $request->all();
         $subject = $this->subjectRepository->create($requestAll);
         if (!$subject) {
-            return redirect()->route('subjects.index')
+            return redirect()->route('admin.subjects.index')
                 ->withErrors(['message' => trans('subject.not_found')]);
         }
         return redirect()->route('subjects.index')->withSuccess(trans('session.subject_create_success'));
@@ -77,7 +77,7 @@ class SubjectController extends Controller
     {
         $subject = $this->subjectRepository->find($id);
         if (!$subject) {
-            return redirect()->route('subjects.index')
+            return redirect()->route('admin.subjects.index')
                 ->withErrors(['message' => trans('subject.not_found')]);
         }
         return view('admin.subject.edit', compact('subject'));
@@ -95,7 +95,7 @@ class SubjectController extends Controller
         $requestAll = $request->only('name');
         $subject =  $this->subjectRepository->update($requestAll, $id);
         if (!$subject) {
-            return redirect()->route('subjects.index')
+            return redirect()->route('admin.subjects.index')
                 ->withErrors(['message' => trans('subject.not_found')]);
         }
         return redirect()->route('subjects.index')->withSuccess(trans('session.subject_update_success'));
@@ -111,7 +111,7 @@ class SubjectController extends Controller
     {
         $subject = $this->subjectRepository->destroy($id);
         if (!$subject) {
-            return redirect()->route('subjects.index')
+            return redirect()->route('admin.subjects.index')
                 ->withErrors(['message' => trans('subject.not_found')]);
         }
         return redirect()->route('subjects.index')->withSuccess(trans('session.subject_update_success'));

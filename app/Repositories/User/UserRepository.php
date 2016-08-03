@@ -48,4 +48,9 @@ class UserRepository extends BaseRepository implements UserRepositoryInterface
     {
         return $this->model->create($data);
     }
+
+    public function userQuestion($id)
+    {
+        return $this->model->with('questions')->find($id);
+    }
 }

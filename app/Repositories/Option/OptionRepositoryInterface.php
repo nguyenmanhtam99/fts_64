@@ -1,8 +1,8 @@
 <?php
 
-namespace App\Repositories\Subject;
+namespace App\Repositories\Option;
 
-interface SubjectRepositoryInterface
+interface OptionRepositoryInterface
 {
     public function create($inputs);
     public function insert($inputs);
@@ -11,4 +11,5 @@ interface SubjectRepositoryInterface
     public function paginate($limit);
     public function find($id);
     public function lists($column, $key = null);
+    public function findBy($column, $option);
 }

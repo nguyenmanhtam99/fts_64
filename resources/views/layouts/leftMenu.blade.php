@@ -13,13 +13,18 @@
                   </li>
 
                  <li>
-                  <a href="{{ route('admin.index') }}">
+                  <a href="{{ route('admin.admin.index') }}">
                   <i class="fa fa-users fa-lg"></i> {{ trans('user.title') }}
                   </a>
                 </li>
                 <li>
-                    <a href="{{ route('subjects.index') }}">
+                    <a href="{{ route('admin.subjects.index') }}">
                         <i class="fa fa-users fa-lg"></i> {{ trans('subject.subject') }}
+                    </a>
+                </li>
+                <li>
+                    <a href="{{ route('admin.questions.index')}}">
+                        <i class="fa fa-users fa-lg"></i> {{ trans('question.question') }}
                     </a>
                 </li>
             </ul>

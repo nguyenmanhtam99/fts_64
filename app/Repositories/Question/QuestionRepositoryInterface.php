@@ -1,8 +1,8 @@
 <?php
 
-namespace App\Repositories\Subject;
+namespace App\Repositories\Question;
 
-interface SubjectRepositoryInterface
+interface QuestionRepositoryInterface
 {
     public function create($inputs);
     public function insert($inputs);

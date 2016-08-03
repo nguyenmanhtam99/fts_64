@@ -87,9 +87,9 @@ class AuthController extends Controller
          */
         if (Auth::attempt(['email' => $request->email, 'password' => $request->password])) {
             if (Auth::user()->isAdmin()) {
-                return redirect()->route('admin.index');
+                return redirect()->route('admin.admin.index');
             }
-            return redirect()->route('users.index');
+            return redirect()->route('user.users.index');
         }
 
         /**

@@ -131,4 +131,14 @@ class BaseRepository
     {
         return $this->model->paginate($limit);
     }
+
+    public function findBy($column, $option)
+    {
+        $data = $this->model->where($column, $option)->get();
+
+        if (!$data) {
+            throw new Exception(trans('message.create_error'));
+        }
+        return $data;
+    }
 }

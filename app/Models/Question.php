@@ -7,6 +7,7 @@ use Illuminate\Database\Eloquent\SoftDeletes;
 
 class Question extends Model
 {
+    protected $fillable = ['content', 'subject_id', 'question_type'];
     /**
      * SoftDelete
      */

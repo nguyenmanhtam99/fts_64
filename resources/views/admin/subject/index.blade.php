@@ -17,7 +17,7 @@
                         <h3> {{ trans('subject.subject') }} <small>&raquo; {{ trans('subject.list_subject') }} </small></h3>
                     </div>
                     <div class="col-md-6 text-right">
-                        <a href="{{ route('subjects.create') }}" class="btn btn-success"><i class="fa fa-plus-circle"></i> {{ trans('subject.create_new') }} </a>
+                        <a href="{{ route('admin.subjects.create') }}" class="btn btn-success"><i class="fa fa-plus-circle"></i> {{ trans('subject.create_new') }} </a>
                     </div>
                 </div>
                 <div class="row">
@@ -54,10 +54,10 @@
                                                 <td>{{ $subject->created_at }}</td>
                                                 <td>{{ $subject->updated_at }}</td>
                                                 <td>
-                                                    <a href="{{ route('subjects.edit', $subject->id) }}" class="btn btn-default btn-sm"><i class="fa fa-eye"></i></a>
+                                                    <a href="{{ route('admin.subjects.edit', $subject->id) }}" class="btn btn-default btn-sm"><i class="fa fa-eye"></i></a>
                                                 </td>
                                                 <td>
-                                                    {!! Form::open(['method' => 'DELETE', 'route' => ['subjects.destroy', $subject->id]]) !!}
+                                                    {!! Form::open(['method' => 'DELETE', 'route' => ['admin.subjects.destroy', $subject->id]]) !!}
                                                     {!! Form::submit(trans('subject.delete'), ['class' => 'btn btn-danger', 'onclick' => "return confirm('Are you sure delete?')"]) !!}
                                                     {!! Form::close() !!}
                                                 </td>
